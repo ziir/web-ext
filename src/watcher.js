@@ -54,6 +54,7 @@ export default function onSourceChange(
   onChange = debounce(onChange, debounceTime, executeImmediately);
 
   watcher.on('change', (filePath) => {
+    console.log('CANARY watcher.onchange', filePath); // eslint-disable-line
     proxyFileChanges({artifactsDir, onChange, filePath, shouldWatchFile});
   });
 
